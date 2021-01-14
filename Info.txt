@@ -1,3 +1,7 @@
 Este es el repositorio del proyecto final de desarrollo de aplicaciones web 2020-1 por Santiago Cadavid Gil y Julio Cesar Zapata.
 
-El proyecto consta de una paginca de venta, en este caso el producto seran teclados.
+El proyecto consta de una pagina de venta, en este caso el producto seran teclados.
+
+web2021
+
+
