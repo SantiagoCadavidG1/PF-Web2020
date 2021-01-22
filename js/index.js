@@ -1,6 +1,47 @@
 
+window.onload = function (){
+	
+	if(document.getElementById("boton_compra")){
+		document.getElementById("boton_compra").onclick= iniciar_compra;	
+	}
+	
+
+}
+
+
+
 var p = getParameterByName('p');
 
+
+function iniciar_compra(){
+
+		$.ajax({
+			url:'servicios/compra/validar_inicio_compra.php',
+			type:'POST',
+			data:{
+				codigo:p
+			},
+			success:function(data){
+				console.log(data);
+				if (data.state) {
+					alert(data.detail);
+				}else{
+					alert(data.detail);
+					if (data.open_login) {
+						open_login();
+					}
+				}
+			},
+			error:function(err){
+				console.error(err);
+			}
+		});
+
+}
+
+function open_login(){
+	window.location.href="login.php"
+}
 
 $(document).ready(function(){
 			$.ajax({
@@ -41,7 +82,7 @@ function formato_precio(valor){
 	return "USD "+svalor;
 }
 
-
+//funcion que devuelve el valor de una variable enviada por URL
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),

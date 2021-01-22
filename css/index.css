@@ -4,7 +4,7 @@
 }
 
 *{
-	border: dotted 1px;
+	border: hidden 1px;
 }
 
 body{
@@ -126,7 +126,7 @@ header{
 }
 
 .part2 *{
-	margin: 1% 0;
+	margin: 6% 0;
 }
 
 .part2 h2{

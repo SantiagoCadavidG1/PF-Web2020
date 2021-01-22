@@ -17,7 +17,7 @@
 			</div>
 			<div class="options">
 				<div class="item-option" title="Registrate"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-				<div class="item-option" title="Ingresar"><i class="fa fa-sign-in" aria-hidden="true"></i></div>
+				<div class="item-option" title="Ingresar"><a href="index.php"><i class="fa fa-sign-in" aria-hidden="true"></i></div>
 				<div class="item-option" title="Mis compras">
 					<a href="carrito.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 				</div>
@@ -34,7 +34,7 @@
 						<h1 id="idprice"></h1>
 						<h3 id="iddescription"></h3>
 						<!--<button onclick="iniciar_compra()">Comprar</button>-->
-						<button>Comprar</button>
+						<button id="boton_compra">Comprar</button>
 					</div>
 				</section>
 				<div class="contenidoTitulo">Productos destacados</div>
