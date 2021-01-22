@@ -1,3 +1,7 @@
+
+var p = getParameterByName('p');
+
+
 $(document).ready(function(){
 			$.ajax({
 				url:'servicios/productos/get_all_products.php',
@@ -7,6 +11,12 @@ $(document).ready(function(){
 					console.log(data);
 					let html='';
 					for (var i = 0; i < data.datos.length; i++) {
+						if ( p !="" && data.datos[i].codigo==p) {
+							document.getElementById("idimg").src="assets/products/"+data.datos[i].imagen;
+							document.getElementById("idtitle").innerHTML=data.datos[i].nombre;
+							document.getElementById("idprice").innerHTML=formato_precio(data.datos[i].precio);
+							document.getElementById("iddescription").innerHTML=data.datos[i].descripcion;
+						}
 						html+=
 						'<div class="product-box">'+
 							'<a href="producto.php?p='+data.datos[i].codigo+'">'+
@@ -24,9 +34,17 @@ $(document).ready(function(){
 			});
 		});
 
-		function formato_precio(valor){
-			//199
-			let svalor=valor.toString();
-			//let array=svalor.split(".");
-			return "USD "+svalor;
-		}
+function formato_precio(valor){
+	//199
+	let svalor=valor.toString();
+	//let array=svalor.split(".");
+	return "USD "+svalor;
+}
+
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}

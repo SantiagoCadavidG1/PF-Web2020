@@ -1,10 +1,10 @@
 :root{
-	--main-header-color:linear-gradient(45deg,#0740F4,#0740F4);
+	--main-header-color:linear-gradient(45deg,red,#0740F4);
 	--main-red:#c71212;
 }
 
 *{
-	border: hidden 1px;
+	border: dotted 1px;
 }
 
 body{
@@ -89,6 +89,7 @@ header{
 	margin-right: 5%;
 	width: 90%;
 	font-family: 'Sen', sans-serif;
+	background: #f3f3f3;
 }
 .contenidoPag{
 	width: 100%;
@@ -103,6 +104,53 @@ header{
 
 .contenidoPag h4{
 	margin: 10% 0;
+}
+
+.contenidoPag section{
+	display:  flex;
+	background: white;
+}
+
+.part1{
+	padding: 1%;
+	width: calc(60% - 2%);
+}
+
+.part1 img{
+	width: 100%;
+}
+
+.part2{
+	padding: 1%;
+	width: calc(40% - 2%);
+}
+
+.part2 *{
+	margin: 1% 0;
+}
+
+.part2 h2{
+	color: #333;
+}
+
+.part2 h1{
+	color: var(--main-red);
+	font-size: 150%;
+}
+
+.part2 h3{
+	font-weight: normal;
+	color: #333;
+}
+
+button{
+	border-style: none;
+	border-radius: 5px;
+	padding: 1% 2%;
+	color: white;
+	background: var(--main-red);
+	cursor: pointer;
+	font-size: 150%;
 }
 
 .listaProductos{
